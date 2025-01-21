@@ -1,5 +1,5 @@
 {
-  "name": "lesson",
+  "name": "linklion",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,6 @@
   "devDependencies": {
     "web-vitals": "^4.2.4"
   },
-  "homepage": "https://junnyang.github.io/main"
+
+  "homepage": "https://linklion.com/main"
 }
