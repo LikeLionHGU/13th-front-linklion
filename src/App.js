@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/Main">
+        <Route path="/main">
           <Main />
         </Route>
       </Switch>
