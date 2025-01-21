@@ -3,6 +3,8 @@ import appbar from "../assets/Appbar.png";
 import background from "../assets/Main_BackGround.png";
 import logo from "../assets/Logo(Icon).png";
 import "../css/Main.css";
+import Appbar from "../assets/Appbar.png";
+
 
 function Main() {
   return (
