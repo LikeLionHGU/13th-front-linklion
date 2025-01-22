@@ -21,6 +21,7 @@ function Main() {
 
             <button className="headerLogin">로그인</button>
           </header>
+          <div></div>
         </div>
       </div>
     </div>

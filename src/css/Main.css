@@ -47,7 +47,19 @@
   color: #0f4a7e;
 
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 26px;
+  z-index: 3;
+}
+
+.headerLogin:hover {
+  color: #fff;
+  background-color: #0f4a7e;
+
+  border: none;
+
+  position: absolute;
+  top: 30px;
+  right: 26px;
   z-index: 3;
 }
