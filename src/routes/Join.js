@@ -24,7 +24,29 @@ function Join() {
               <h3 className="joinTitle">이름</h3>
               <input type="text" className="joinComponent"></input>
             </div>
-            <div className="joinTrack"></div>
+            <div className="joinTrack">
+              <fieldset>
+                <label>
+                  <input type="radio" name="contact" value="email" checked />
+                  <span>이메일</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="contact" value="phone" />
+                  <span>전화</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="contact" value="fax" disabled />
+                  <span>팩스</span>
+                </label>
+
+                <label>
+                  <input type="radio" name="contact" value="mail" />
+                  <span>우편</span>
+                </label>
+              </fieldset>
+            </div>
           </div>
         </div>
       </div>
