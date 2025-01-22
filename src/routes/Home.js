@@ -4,7 +4,7 @@ import logo from "../assets/Logo(Icon).png";
 import "../components/styles/Main.css";
 import Appbar from "../assets/Appbar.png";
 
-function Main() {
+function Home() {
   return (
     <div>
       <div className="body">
@@ -28,4 +28,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;
