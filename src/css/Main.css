@@ -1,0 +1,65 @@
+.background {
+  width: 100%;
+  height: 95%;
+  position: absolute;
+  top: none;
+  left: none;
+  z-index: 1;
+}
+
+.headerImg {
+  width: 100%;
+  position: absolute;
+  top: none;
+  left: none;
+  z-index: 2;
+}
+
+.headerLogo {
+  width: 40px;
+  position: absolute;
+  top: 20px;
+  left: 26px;
+  z-index: 4;
+}
+
+.headerLogo img {
+  width: 26px;
+  padding-top: 6px;
+  padding-left: 7px;
+}
+
+.headerLogo button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  color: #fff;
+
+  z-index: 3;
+}
+
+.headerLogin {
+  width: 73px;
+  height: 30px;
+  border-radius: 10px;
+
+  color: #0f4a7e;
+
+  position: absolute;
+  top: 30px;
+  right: 26px;
+  z-index: 3;
+}
+
+.headerLogin:hover {
+  color: #fff;
+  background-color: #0f4a7e;
+
+  border: none;
+
+  position: absolute;
+  top: 30px;
+  right: 26px;
+  z-index: 3;
+}

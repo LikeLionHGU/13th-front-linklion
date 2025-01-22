@@ -2,13 +2,13 @@
   "name": "linklion",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://linklion.com/main",
   "dependencies": {
     "cra-template": "1.2.0",
-    "gh-pages": "^6.3.0",
     "prop-types": "^15.7.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^5.3.0",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1"
   },
   "scripts": {
@@ -39,8 +39,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "web-vitals": "^4.2.4"
-  },
-
-  "homepage": "https://linklion.com/main"
+  }
 }
