@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import background from "../assets/Main_BackGround.png";
 import logo from "../assets/Logo(Icon).png";
-import "../css/Main.css";
+import "../components/styles/Main.css";
 import Appbar from "../assets/Appbar.png";
 
 function Main() {
