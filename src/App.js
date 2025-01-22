@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Main from "./routes/Main";
+import Home from "./routes/Home";
 import List from "./routes/List";
 import Join from "./routes/Join";
 
