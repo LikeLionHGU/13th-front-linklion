@@ -4,7 +4,6 @@ import Home from "./routes/Home";
 import List from "./routes/List";
 import Join from "./routes/Join";
 
-
 function App() {
   return (
     <Router>
