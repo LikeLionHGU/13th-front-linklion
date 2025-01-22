@@ -1,36 +1,17 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-<<<<<<< HEAD
-=======
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 import Main from "./routes/Main";
->>>>>>> main
 import List from "./routes/List";
 
 function App() {
   return (
-<<<<<<< HEAD
     <Router>
-      <Switch>
-        <Route path="/List">
-          <List />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/list" element={<List />}></Route>
+        <Route path="/join" element={<Join />}></Route>
+      </Routes>
     </Router>
-=======
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Router>
-        <Switch>
-          <Route path="/main">
-            <Main />
-          </Route>
-          <Route path="/List">
-            <List />
-          </Route>
-        </Switch>
-      </Router>
-    </BrowserRouter>
->>>>>>> main
   );
 }
 
