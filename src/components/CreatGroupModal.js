@@ -126,7 +126,7 @@ function CreatGroupModal() {
               className="nameBox"
               type="text"
               placeholder="여기에 작성해 주세요"
-              value={groupName}
+              value={formData.groupName}
               onChange={(e) => setGroupName(e.target.value)}
             />
           </div>
