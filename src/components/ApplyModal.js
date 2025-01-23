@@ -101,7 +101,6 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
               {applyMembers.map((applyMember) => (
                 <div id="apply-people-card">{applyMember}</div>
               ))}
-
             </div>
           </div>
         </div>
