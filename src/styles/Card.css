@@ -1,6 +1,6 @@
-#card {
+#list-card {
   width: 250px;
-  height: 250px;
+  height: 90%;
   margin-right: 30px;
   margin-bottom: 30px;
   border: none;
@@ -10,77 +10,55 @@
   transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
 }
 
-#card:hover {
+#list-card:hover {
   transform: translateY(-5px);
 }
 
-#card:active {
+#list-card:active {
     box-shadow: 0 3px 13px 3px rgba(255, 255, 255, 0.5);
   }
 
-#image-box {
+#list-image-box {
   margin-bottom: 10px;
 }
 
-#category-img {
+#list-category-img {
   width: 250px;
   border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
-#info-box {
+#list-info-box {
   padding: 10px;
 }
 
-#title-box {
+#list-title-box {
   margin-bottom: 10px;
   font-size: large;
 }
 
-#name-box {
+#list-content-box {
   margin-bottom: 10px;
 }
 
-#category-box {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.category {
-  margin-right: 10px;
+#list-category {
+  margin-bottom: 15px;
   padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 30%;
   border: none;
   border-radius: 10px;
   background-color: #0f4a7e;
   color: white;
-}
-
-#description-box {
-  margin-bottom: 10px;
-}
-
-#apply-button-box {
   text-align: center;
 }
 
-#apply-button {
-  width: 200px;
-  height: 50px;
-  border: none;
-  border-radius: 10px;
-  background-color: #0f4a7e;
-  color: white;
-  font-size: large;
-  cursor: pointer;
+.list-content-key {
+  margin-right: 10px;
+  color: #0f4a7e;
+  font-weight: bold;
 }
 
-#apply-button:hover {
-  background-color: #0b3860;
-}
-
-#apply-button:active {
-  box-shadow: 3px 3px 0 rgb(0, 0, 0, 0.5);
-  position: relative;
-  top: 2px;
+#list-location {
+  margin-bottom: 10px;
 }

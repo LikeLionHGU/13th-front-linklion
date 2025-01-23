@@ -1,31 +1,30 @@
 import { useEffect, useState } from "react";
 // import background from "../assets/Main_BackGround.png";
 import logo from "../assets/Logo(Icon).png";
-import "../components/styles/Main.css";
-// import Appbar from "../assets/Appbar.png";
+import Appbar from "../assets/Home/앱바.svg";
+import background from "../assets/Home/Intersect.png";
+import "../styles/Main.css";
 
-function Home() {
-  return (
+function Home(){
+  return(
     <div>
-      <div className="body">
-        <div className="background">
-          {/* <img src={background} alt="background" className="background"></img> */}
-          <header className="header">
-            <div className="headerImg">
-              {/* <img src={Appbar} alt="header" className="headerImg"></img> */}
-            </div>
-            <div className="headerLogo">
-              <button className="headerLogo"> </button>
-              <img src={logo} className="headerLogo"></img>
-            </div>
-
-            <button className="headerLogin">로그인</button>
-          </header>
-          <div></div>
+      <div className="HomeBody">
+        <img className="background" src={background} alt="Background"/>
+        <header className="homeHeader">
+          <img className="headerImg" src={Appbar} alt="header"/>
+          <div className="Logo">
+            <img src={logo}/>
+          </div>
+          <span>LINKLION</span>
+        </header>
+        <button className="Enter"  >입장하기</button>
+        <div className="TextBox">
+          <h1>LINKLION</h1>
+          <span>멋쟁이 사자처럼의 혁신과 연대를 상징하는 소모임 플랫폼</span>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Home;
