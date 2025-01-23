@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import logo from "../assets/Logo(Icon).png";
 import Appbar from "../assets/join/detail-appbar.svg";
 import RadioGroup from "../components/RadioGroup";
@@ -103,6 +104,9 @@ function SignUp() {
           <button className="signUpBtn" onClick={handleSignUp}>
             회원가입
           </button>
+          <p className="signup-link">
+            이미 계정이 있으신가요? <Link to="/login">로그인</Link>
+          </p>
         </div>
       </div>
     </div>
