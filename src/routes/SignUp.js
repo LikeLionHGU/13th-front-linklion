@@ -39,7 +39,7 @@ function SignUp() {
 
       if (response.status === 200) {
         console.log("성공!");
-        navigate("/login");
+        navigate("/");
       } else if (response.status === 409) {
         alert("회원가입 실패: 이미 가입한 회원입니다.");
       } else if (response.status === 400) {
