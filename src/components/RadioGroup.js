@@ -1,9 +1,9 @@
 function RadioGroup({ label, children }) {
   return (
-    <fieldset>
+    <div>
       <legend>{label}</legend>
       {children}
-    </fieldset>
+    </div>
   );
 }
 export default RadioGroup;
