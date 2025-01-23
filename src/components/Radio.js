@@ -1,6 +1,8 @@
+import "../components/styles/Radio.css";
+
 function Radio({ children, value, name, defaultChecked, disabled }) {
   return (
-    <label>
+    <label className="track">
       <input
         type="radio"
         value={value}

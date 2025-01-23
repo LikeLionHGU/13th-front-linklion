@@ -1,0 +1,118 @@
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+.body {
+  display: flex;
+  flex-direction: row;
+  font-family: "nanumgothic", sans-serif;
+  font-weight: 600;
+  align-content: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-container {
+  font-family: "nanumgothic", sans-serif;
+  font-weight: 600;
+}
+
+.login-container {
+  width: 411px;
+  height: 510px;
+  border-radius: 20px;
+  border-color: #929292;
+  box-shadow: 0 10px 10px -5px #d9d9d9;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.login-top {
+  height: 42px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #0f4a7e;
+}
+
+.login-box {
+  justify-content: center;
+}
+
+.login {
+  justify-items: center;
+}
+.login img {
+  margin-top: 20px;
+  width: 90px;
+}
+
+hr {
+  margin: auto;
+  width: 330px;
+}
+
+.login-form {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: auto;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.login-component {
+  width: 330px;
+  height: 60px;
+
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  font-size: 17px;
+}
+
+input {
+  border-radius: 10px;
+  border: solid 1px #929292;
+}
+
+.username {
+  height: 24px;
+}
+
+.loginBtn {
+  width: 330px;
+  height: 60px;
+
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0f4a7e;
+  color: #fff;
+
+  font-size: 20px;
+}
+
+.loginBtn:hover {
+  background-color: #fff;
+  color: #0f4a7e;
+  border: solid 1px #0f4a7e;
+}
+
+.signup-link {
+  color: #929292;
+}
+
+#linkToSignUp {
+  color: #929292;
+}
+#linkToSignUp:hover {
+  color: #0f4a7e;
+  text-decoration: underline;
+}

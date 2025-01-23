@@ -3,6 +3,10 @@ body {
   font-weight: 600;
 }
 
+.track {
+  border: none;
+}
+
 .gender-input {
   margin-right: 16px;
 }
@@ -14,14 +18,15 @@ body {
   border-radius: 50%;
   width: 1.25em;
   height: 1.25em;
+  font-size: 15px;
 }
 
 [type="radio"]:checked {
-  border: 0.4em solid blue;
+  border: 0.4em solid #0f4a7e;
 }
 
 [type="radio"]:focus-visible {
-  outline: max(2px, 0.1em) dotted blue;
+  outline: max(2px, 0.1em) dotted #0f4a7e;
   outline-offset: max(2px, 0.1em);
 }
 
