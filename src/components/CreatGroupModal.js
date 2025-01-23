@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Modal from "react-modal";
-import "../src/App.css";
+import "../styles/Creatgroup.css";
 import axios from 'axios'; 
 
 const eventData = {
@@ -19,11 +19,14 @@ const eventData = {
 
 const apiUrl = "https://one3th-front-api.onrender.com/grouping/addGroup"
 
-function CreatGroupModal() {
+function CreatGroupModal({setIsModalOpen}) {
+
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
+
     groupName: "",
-    time: "",
+    startTime: "",
+    endTime: "",
     date: "",
     location: "",
     description: "",
@@ -69,7 +72,8 @@ function CreatGroupModal() {
   const [description, setDescription] = useState("");
   const [maxNum, setMaxNum] = useState("");
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("00:00");
+  const [startTime, setStartTime] = useState("00:00");
+  const [endTime, setEndTime] = useState("00:00");
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState("");
 
@@ -110,7 +114,7 @@ function CreatGroupModal() {
 
   return (
     <div className="Back">
-      <button onClick={openModal}>소모임 생성</button>
+      <button onClick={openModal} className="openBtn">소모임 생성</button>
 
       <Modal className="FormContainer" isOpen={isOpen} onRequestClose={closeModal} >
       
@@ -126,8 +130,8 @@ function CreatGroupModal() {
               className="nameBox"
               type="text"
               placeholder="여기에 작성해 주세요"
-              value={groupName}
-              onChange={(e) => setGroupName(e.target.value)}
+              value={formData.groupName}
+              onChange={(e) => handleChange(e)}
             />
           </div>
 
@@ -171,8 +175,8 @@ function CreatGroupModal() {
             <br></br>
             <select 
               className="selectBox"
-              value={maxNum} 
-              onChange={(e) => setMaxNum(e.target.value)}>
+              value={formData.maxNum} 
+              onChange={(e) => handleChange(e)}>
               <option value="">선택</option>
               <option value="3명">3명</option>
               <option value="4명">4명</option>
@@ -192,8 +196,8 @@ function CreatGroupModal() {
             <input 
               className="dateBox"
               type="date"
-              value={date} 
-              onChange={(e) => setDate(e.target.value)} />
+              value={formData.date} 
+              onChange={(e) => handleChange(e)} />
           </div>
 
           <div className="inputTime">
@@ -202,8 +206,15 @@ function CreatGroupModal() {
             <input
               className="TimeBox"
               type="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
+              value={formData.startTime}
+              onChange={(e) => handleChange(e)}
+            />
+            ~
+            <input
+              className="TimeBox"
+              type="time"
+              value={formData.endTime}
+              onChange={(e) => handleChange(e)}
             />
           </div>
 
@@ -216,7 +227,7 @@ function CreatGroupModal() {
                   type="radio"
                   value={cate}
                   checked={category === cate}
-                  onChange={(e) => setCategory(e.target.value)}
+                  onChange={(e) => handleChange(e)}
                 />
                 {cate}
               </label>
@@ -230,8 +241,8 @@ function CreatGroupModal() {
               className="locateBox"
               type="text"
               placeholder="여기에 작성해 주세요 (ex: 평봉)"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              value={formData.location}
+              onChange={(e) => handleChange(e)}
             />
           </div>
         </div>{/* 우측 */}
