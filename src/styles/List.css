@@ -1,0 +1,25 @@
+body {
+    margin: 0px;
+}
+
+#main {
+  display: flex;
+}
+
+#detail-appbar {
+  width: 100%;
+}
+
+#create-button {
+  width: 50px;
+}
+
+#create-button-box {
+  margin: 30px;
+}
+
+#card-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 50px;
+}

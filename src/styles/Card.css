@@ -1,0 +1,86 @@
+#card {
+  width: 250px;
+  height: 250px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
+}
+
+#card:hover {
+  transform: translateY(-5px);
+}
+
+#card:active {
+    box-shadow: 0 3px 13px 3px rgba(255, 255, 255, 0.5);
+  }
+
+#image-box {
+  margin-bottom: 10px;
+}
+
+#category-img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+#info-box {
+  padding: 10px;
+}
+
+#title-box {
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+#name-box {
+  margin-bottom: 10px;
+}
+
+#category-box {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.category {
+  margin-right: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0f4a7e;
+  color: white;
+}
+
+#description-box {
+  margin-bottom: 10px;
+}
+
+#apply-button-box {
+  text-align: center;
+}
+
+#apply-button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #0f4a7e;
+  color: white;
+  font-size: large;
+  cursor: pointer;
+}
+
+#apply-button:hover {
+  background-color: #0b3860;
+}
+
+#apply-button:active {
+  box-shadow: 3px 3px 0 rgb(0, 0, 0, 0.5);
+  position: relative;
+  top: 2px;
+}
