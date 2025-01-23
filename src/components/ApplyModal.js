@@ -8,6 +8,7 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
 
   const [group, setGroup] = useState([]);
   const [applyMembers, setApplyMembers] = useState([]);
+  const [hasJoined, setHasJoined] = useState(false);
 
   const getGroup = async () => {
     const response = await fetch(
@@ -19,10 +20,28 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
 
   const getApplyMembers = async () => {
     const response2 = await fetch(
-      `https://one3th-front-api.onrender.com/grouping/groupList/${groupId}`
+      `https://one3th-front-api.onrender.com/grouping/groupParticipants/${groupId}?memberID=67927c4945f95231710d4db7`
     );
     const json2 = await response2.json();
-    setApplyMembers(json2);
+    console.log(json2);
+    setApplyMembers(json2.participants);
+    setHasJoined(json2.hasJoined);
+  };
+
+  const joinGroup = async () => {
+    const memID = { memberID: "67927c4945f95231710d4db7" };
+    const sendRequest = await fetch(
+      `https://one3th-front-api.onrender.com/grouping/joinGroup/${groupId}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(memID),
+      }
+    )
+      .then()
+      .catch((error) => console.error(error));
+    alert("신청하였습니다!");
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -42,7 +61,7 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
           />
           <div id="detail-category">{group.category}</div>
         </div>
-        <div id="detail-title-box">{group.title}</div>
+        <div id="detail-title-box">{group.groupName}</div>
         <div id="detail-info-box">
           <div id="detail-content-box">
             <div id="detail-content">
@@ -82,11 +101,20 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
               {applyMembers.map((applyMember) => (
                 <div id="apply-people-card">{applyMember}</div>
               ))}
+
             </div>
           </div>
         </div>
         <div id="apply-button-box">
-          <button id="apply-button">신청하기</button>
+          {hasJoined ? (
+            <button id="apply-button-disabled" onClick={joinGroup} disabled>
+              이미 신청하셨습니다
+            </button>
+          ) : (
+            <button id="apply-button" onClick={joinGroup}>
+              신청하기
+            </button>
+          )}
         </div>
       </div>
     </div>

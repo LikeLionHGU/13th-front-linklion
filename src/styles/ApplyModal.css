@@ -97,9 +97,8 @@ button {
   margin-bottom: 10px;
 }
 
-#detail-description{
+#detail-description {
   line-height: 1.5;
-
 }
 #detail-content-box {
   display: flex;
@@ -118,8 +117,7 @@ button {
 
 #apply-button {
   padding: 20px;
-  padding-left: 320px;
-  padding-right: 320px;
+  width: 700px;
   border: none;
   border-radius: 10px;
   box-shadow: 0.8rem 0.5rem 1.4rem #bec5d0, -0.3rem -0.4rem 0.8rem #fbfbfb;
@@ -137,16 +135,27 @@ button {
   cursor: pointer;
 }
 
+#apply-button-disabled {
+  padding: 20px;
+  width: 700px;
+  border: none;
+  border-radius: 10px;
+  background-color: lightgrey;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 #apply-people-box {
   padding-top: 10px;
   padding-right: 20px;
   width: 460px;
-  text-align: right;
+  text-align: left;
 }
 
 #apply-people-title {
   margin-bottom: 20px;
-  padding-right: 10px;
+  padding-left: 165px;
   font-size: 1.3rem;
   color: #0f4a7e;
 }
