@@ -1,0 +1,121 @@
+@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
+
+.body {
+  display: flex;
+  flex-direction: row;
+  font-family: "nanumgothic", sans-serif;
+  font-weight: 600;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.wrapper p {
+  justify-content: center;
+  margin-left: 95px;
+  margin-right: 95px;
+}
+
+hr {
+  margin-left: 0;
+  width: 334.7px;
+}
+
+.signUpAppbar {
+  z-index: 1;
+  height: 100%;
+}
+
+#logoDiv {
+  position: relative;
+}
+
+#signUp-logo {
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+  left: 10px;
+  height: 8%;
+}
+
+.signUp-FBox {
+  width: 411px;
+  height: 510px;
+}
+
+.signUp-top {
+  height: 30px;
+  border-radius: 14.46px 14.46px 0px 0px;
+  background-color: #0f4a7e;
+}
+
+.signUp {
+  justify-content: center;
+  align-items: center;
+}
+
+#signUp {
+  padding-left: 30px;
+}
+
+.signUp-box {
+  height: 430px;
+  display: grid;
+  border-radius: 14.46px;
+  border-color: #929292;
+  box-shadow: 0 10px 10px -5px #d9d9d9;
+}
+
+.track-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#signUp {
+  color: #0f4a7e;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.signUpName {
+  margin-bottom: 20px;
+}
+
+.signUpDiv {
+  padding-left: 30px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.signUpComponent {
+  width: 330px;
+  height: 38.32px;
+  border-radius: 7.23px;
+  border: solid 0.72px #929292;
+  font-size: 15px;
+}
+
+.Btn {
+  display: flex;
+  justify-content: center;
+}
+
+.signUpBtn {
+  margin-top: 30px;
+  width: 330px;
+  height: 38.32px;
+  border-radius: 7.23px;
+  border: none;
+  background-color: #0f4a7e;
+  color: #fff;
+  font-size: 15px;
+}
+
+.signUpBtn:hover {
+  background-color: #fff;
+  color: #0f4a7e;
+  border: solid 1px #0f4a7e;
+}

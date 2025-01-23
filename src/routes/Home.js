@@ -5,7 +5,6 @@ import Appbar from "../assets/Home/앱바.svg";
 import background from "../assets/Home/Intersect.png";
 import "../styles/Main.css";
 
-
 function Home(){
   return(
     <div>
