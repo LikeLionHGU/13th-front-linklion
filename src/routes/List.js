@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import list_appbar from "../assets/list/list_appbar.svg";
 import Card from "../components/Card";
-import "../components/styles/List.css";
+import "../styles/List.css";
 
 function List() {
   //   const [cards, setCards] = useState([]);
