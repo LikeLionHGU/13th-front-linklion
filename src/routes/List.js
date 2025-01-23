@@ -12,6 +12,8 @@ import "../styles/List.css";
 
 function List() {
   const [cards, setCards] = useState([]);
+  const [groupId, setGroupId] = useState("");
+
   const getCards = async () => {
     const response = await fetch(
       `https://one3th-front-api.onrender.com/grouping/groupList`
@@ -25,8 +27,9 @@ function List() {
   }, []);
 
   const [modalOpen, setModalOpen] = useState(false);
-  const openApplyModal = () => {
+  const openApplyModal = (_id) => {
     setModalOpen(true);
+    setGroupId(_id);
   };
 
   return (
@@ -53,7 +56,13 @@ function List() {
           </div>
         </div>
         {cards.map((card) => (
-          <div id="card-list" onClick={openApplyModal}>
+          <div
+            id="card-list"
+            onClick={() => {
+              openApplyModal();
+              setGroupId(card._id);
+            }}
+          >
             <Card
               img_path={card.img_path}
               groupName={card.groupName}
@@ -64,7 +73,9 @@ function List() {
           </div>
         ))}
       </div>
-      {modalOpen && <ApplyModal setModalOpen={setModalOpen} />}
+      {modalOpen && (
+        <ApplyModal setModalOpen={setModalOpen} groupId={groupId} memberId={memberId} />
+      )}
       <div id="list-next-arrow-box">
         <img id="list-next-arrow" src={next_arrow} alt="next-arrow" />
       </div>

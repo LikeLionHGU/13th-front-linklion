@@ -15,13 +15,13 @@ function Card({ img_path, groupName, category, location, createdBy }) {
         <div id="list-content-box">
           <div id="list-category">{category}</div>
           <div id="list-content">
+            <div id="list-createdBy">
+              <span className="list-content-key">모임장</span>
+              <span className="list-content-value">{createdBy}</span>
+            </div>
             <div id="list-location">
               <span className="list-content-key">위치</span>
               <span className="list-content-value">{location}</span>
-            </div>
-            <div id="list-organizer">
-              <span className="list-content-key">주선자</span>
-              <span className="list-content-value">{createdBy}</span>
             </div>
           </div>
         </div>
