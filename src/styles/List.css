@@ -1,25 +1,56 @@
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 #main {
   display: flex;
+  flex-direction: row;
 }
 
-#detail-appbar {
+#list-appbar {
+  position: relative;
+  z-index: 1;
   width: 100%;
 }
 
-#create-button {
-  width: 50px;
+#list-logo {
+  position: absolute;
+  z-index: 100;
+  top: 5%;
+  left: 1%;
 }
 
-#create-button-box {
-  margin: 30px;
+#list-profile {
+  position: absolute;
+  z-index: 100;
+  bottom: 10%;
+  left: 1%;
+}
+
+#list-username {
+  position: absolute;
+  z-index: 100;
+  bottom: 4%;
+  left: 1%;
+  width: 80px;
+  color: white;
+}
+
+#list-previous-arrow-box {
+  position: absolute;
+  left: 10%;
+  top: 50%;
 }
 
 #card-grid {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin: 50px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 5%;
+  margin-left: 8%;
+}
+
+#list-next-arrow-box {
+  position: absolute;
+  right: 3%;
+  top: 50%;
 }
