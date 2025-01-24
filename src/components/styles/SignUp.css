@@ -121,4 +121,5 @@ hr {
   background-color: #fff;
   color: #0f4a7e;
   border: solid 1px #0f4a7e;
+  cursor: pointer;
 }
