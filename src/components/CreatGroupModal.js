@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import Modal from "react-modal";
 import "../styles/Creatgroup.css";
 import axios from "axios";
+import { Navigate, useNavigate } from "react-router";
 
 const apiUrl = "https://one3th-front-api.onrender.com/grouping/addGroup";
 
@@ -18,6 +19,7 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
 
   const fileInputRef = useRef(null);
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
   const handleFileInputChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -60,7 +62,7 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
         console.log("소그룹이 성공적으로 등록되었습니다!", response.data);
         alert("소그룹이 성공적으로 등록되었습니다!");
         setCreateModalOpen(false);
-        window.location.reload();
+        navigate("/list");
       })
       .catch((error) => {
         console.error("소그룹 등록 중 오류가 발생했습니다.", error);

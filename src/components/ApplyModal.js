@@ -1,3 +1,4 @@
+import { Navigate, useNavigate } from "react-router";
 import "../styles/ApplyModal.css";
 import { useEffect, useState } from "react";
 
@@ -10,6 +11,7 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   const [applyMembers, setApplyMembers] = useState([]);
   const [hasJoined, setHasJoined] = useState(false);
   const [memberID, setMemberID] = useState("");
+  const navigate = useNavigate();
 
   const getGroup = async () => {
     const response = await fetch(
@@ -44,7 +46,7 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
       .then()
       .catch((error) => console.error(error));
     alert("신청하였습니다!");
-    window.location.reload();
+    navigate("/list");
   };
 
   useEffect(() => {
