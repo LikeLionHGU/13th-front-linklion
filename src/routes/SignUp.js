@@ -38,6 +38,7 @@ function SignUp() {
         }
       );
 
+      // eslint-disable-next-line no-unused-vars
       const data = await response.json();
 
       if (response.status === 200) {

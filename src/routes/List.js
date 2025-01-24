@@ -14,10 +14,13 @@ import CreatGroupModal from "../components/CreatGroupModal";
 function List() {
   const [cards, setCards] = useState([]);
   const [groupId, setGroupId] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [memberId, setMemberId] = useState("");
 
   const getCards = async () => {
-    const response = await fetch(`https://one3th-front-api.onrender.com/grouping/groupList`);
+    const response = await fetch(
+      `https://one3th-front-api.onrender.com/grouping/groupList`
+    );
     const json = await response.json();
     setCards(json);
   };
@@ -84,8 +87,19 @@ function List() {
           </div>
         ))}
       </div>
-      {modalOpen && <ApplyModal setModalOpen={setModalOpen} groupId={groupId} memberId={memberId} />}
-      {createModalOpen && <CreatGroupModal createModalOpen={createModalOpen} setCreateModalOpen={setCreateModalOpen} />}
+      {modalOpen && (
+        <ApplyModal
+          setModalOpen={setModalOpen}
+          groupId={groupId}
+          memberId={memberId}
+        />
+      )}
+      {createModalOpen && (
+        <CreatGroupModal
+          createModalOpen={createModalOpen}
+          setCreateModalOpen={setCreateModalOpen}
+        />
+      )}
       {/* <div id="list-next-arrow-box">
         <img id="list-next-arrow" src={next_arrow} alt="next-arrow" />
       </div> */}

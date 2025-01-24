@@ -6,8 +6,6 @@ import axios from "axios";
 const apiUrl = "https://one3th-front-api.onrender.com/grouping/addGroup";
 
 function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
-  const [isOpen, setIsOpen] = useState(false);
-
   const [groupName, setGroupName] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
@@ -80,7 +78,11 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
 
   return (
     <div className="Back">
-      <Modal className="FormContainer" isOpen={createModalOpen} onRequestClose={() => setCreateModalOpen(false)}>
+      <Modal
+        className="FormContainer"
+        isOpen={createModalOpen}
+        onRequestClose={() => setCreateModalOpen(false)}
+      >
         <h2>소모임 생성하기</h2>
 
         <form className="inputForm" onSubmit={handleSubmit}>
@@ -113,15 +115,30 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
             {/* 날짜 */}
             <div className="inputDate">
               <label>날짜</label>
-              <input className="dateBox" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+              <input
+                className="dateBox"
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
             </div>
 
             {/* 시간 */}
             <div className="inputTime">
               <label>시간</label>
-              <input className="TimeBox" type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+              <input
+                className="TimeBox"
+                type="time"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+              />
               ~
-              <input className="TimeBox" type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
+              <input
+                className="TimeBox"
+                type="time"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
+              />
             </div>
           </div>
 
@@ -143,11 +160,16 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
               <div className="exNum">
                 제한인원 보기
                 <div className="numHoverText">
-                  최소인원은 <strong>3명</strong> 최대인원은 <strong>10명</strong>입니다.
+                  최소인원은 <strong>3명</strong> 최대인원은{" "}
+                  <strong>10명</strong>입니다.
                 </div>
               </div>
 
-              <select className="selectBox" value={maxNum} onChange={(e) => setMaxNum(e.target.value)}>
+              <select
+                className="selectBox"
+                value={maxNum}
+                onChange={(e) => setMaxNum(e.target.value)}
+              >
                 <option value="">선택</option>
                 <option value="3명">3명</option>
                 <option value="4명">4명</option>
@@ -162,7 +184,16 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
 
             <div className="inputCate">
               <label>카테고리</label>
-              {["스포츠", "노래방", "카공", "영화", "독서", "친목", "밥", "기타"].map((cate) => (
+              {[
+                "스포츠",
+                "노래방",
+                "카공",
+                "영화",
+                "독서",
+                "친목",
+                "밥",
+                "기타",
+              ].map((cate) => (
                 <label className="cateBox" key={cate}>
                   <input
                     type="radio"
@@ -192,7 +223,10 @@ function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
           </div>
         </form>
 
-        <button className="closeModalBtn" onClick={() => setCreateModalOpen(false)}>
+        <button
+          className="closeModalBtn"
+          onClick={() => setCreateModalOpen(false)}
+        >
           닫기
         </button>
       </Modal>
