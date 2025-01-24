@@ -1,17 +1,14 @@
-import { useState } from "react";
 import logo from "../assets/signUp/Logo.svg";
 import Appbar from "../assets/Home/앱바.svg";
 import background from "../assets/Home/Intersect.png";
 import "../styles/Main.css";
-import SignUp from "../routes/SignUp"
 import { useNavigate } from "react-router";
-
 
 function Home() {
   const navigate = useNavigate();
 
   const signPageEnter = () => {
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -37,8 +34,10 @@ function Home() {
         {/* 하단 설명 박스 */}
         <div className="TextBox">
           <h2 className="DescriptionTitle">
-            멋쟁이사자처럼 대학교의<br />
-            혁신과 연대를 상징하는<br />
+            멋쟁이사자처럼 대학교의
+            <br />
+            혁신과 연대를 상징하는
+            <br />
             소모임 플랫폼
           </h2>
         </div>
@@ -56,4 +55,3 @@ function Home() {
 }
 
 export default Home;
-

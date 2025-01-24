@@ -12,7 +12,9 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   const [memberID, setMemberID] = useState("");
 
   const getGroup = async () => {
-    const response = await fetch(`https://one3th-front-api.onrender.com/grouping/groupList/${groupId}`);
+    const response = await fetch(
+      `https://one3th-front-api.onrender.com/grouping/groupList/${groupId}`
+    );
     const json = await response.json();
     setGroup(json);
   };
@@ -30,11 +32,15 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   const joinGroup = async () => {
     const memID = { memberID: memberID };
     console.log(memID);
-    const sendRequest = await fetch(`https://one3th-front-api.onrender.com/grouping/joinGroup/${groupId}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(memID),
-    })
+    // eslint-disable-next-line no-unused-vars
+    const sendRequest = await fetch(
+      `https://one3th-front-api.onrender.com/grouping/joinGroup/${groupId}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(memID),
+      }
+    )
       .then()
       .catch((error) => console.error(error));
     alert("신청하였습니다!");
@@ -48,6 +54,8 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
     console.log("groupID " + groupId);
     getGroup();
     getApplyMembers(userID);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -90,7 +98,9 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
               </div>
               <div id="detail-description">
                 <span className="detail-content-key">설명</span>
-                <span className="detail-content-value">{group.description}</span>
+                <span className="detail-content-value">
+                  {group.description}
+                </span>
               </div>
             </div>
           </div>
