@@ -1,138 +1,178 @@
+/* 전체 배경에서 "소모임 생성" 버튼 감싸는 컨테이너 */
+.Back {
+  text-align: right;
+  margin: 20px;
+}
+
+/* "소모임 생성" 열기 버튼 */
 .openBtn {
-  z-index: 300;
-  position: absolute;
+  background-color: #0054a6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.openBtn:hover {
+  background-color: #003d7a;
 }
 
-/* 모달 전체 */ 
-.FormContainer{
-  display: flex;
-  width: 50%;
-  height: auto;
-  border: 1px solid black;
-  color: #0F4A7E;
-  background-color: white;
-  /*border: none;*/
-  border-radius: 10px;
-  margin: auto;
-  z-index: 2000;
-  position: absolute;
-
+/* 모달 창 컨테이너 (react-modal에서 className="FormContainer" 지정) */
+.FormContainer {
+  position: relative;
+  max-width: 900px;  /* 모달 가로 크기 */
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #ccc;
 }
-.Back{
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  z-index: 200;
 
+/* 모달 내부 제목 */
+.FormContainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
-/*
-overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-}
-*/
 
+/* 폼 전체 (왼쪽, 오른쪽 2단 레이아웃) */
 .inputForm {
-  flex-direction: column;
+  display: flex;
+  gap: 30px;
 }
 
-.LeftCon{
-}
-.RightCon{
-}
-
-/* 소모임 이름 */
-.inputName {
-  padding: 10px;
-}
-.nameBox{
-  border-radius: 8px;
-  width: 95%;
-  height: 30px;
-  margin-top: 10px;
-  border: 1px solid gray;
+/* 왼쪽/오른쪽 영역 */
+.LeftCon,
+.RightCon {
+  flex: 1; /* 영역을 균등 분배 */
 }
 
-/* 소개글 */
-.inputDescrip{
-  padding: 10px;
-}
-.inputDescrip span{
-  font-size: 14px;
-}
-.descripBox{
-  border: 1px solid gray;
-  margin-top: 10px;
-  border-radius: 8px;
-  width: 95%;
-  height: 100px;
+/* 각 입력 영역 공통 스타일(간격) */
+.inputName,
+.inputImage,
+.inputDate,
+.inputTime,
+.inputDescrip,
+.inputNum,
+.inputCate,
+.inputLocate {
+  margin-bottom: 20px;
 }
 
-/* 인원 */
-.inputNum span{
-  font-size: 14px;
-}
-.selectBox{
-  margin-top: 10px;
-  width: 95%;
-  border-radius: 8px;
-  height: 30px;
-}
-
-/* 제한인원 안내 */
-.numBox{
-  color: #0F4A7E;
-  font-size: 12px;
-  padding: 4px 6px 4px 6px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  margin-left: 10px;
-}
-.exNum{
-  font-size: 14px;
+/* 라벨 공통 스타일 */
+.inputName label,
+.inputImage label,
+.inputDate label,
+.inputTime label,
+.inputDescrip label,
+.inputNum label,
+.inputCate label,
+.inputLocate label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
 }
 
-/* 날짜 */
-.dateBox{
-  width: 95%;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid gray;
+/* 공통 입력/박스 스타일 */
+.nameBox,
+.imageBox,
+.dateBox,
+.TimeBox,
+.descripBox,
+.numBox,
+.selectBox,
+.locateBox {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* 시간 */
-.TimeBox{
-  width: 45%;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid gray;
+/* 소개글 textarea */
+.descripBox {
+  min-height: 80px;
+  resize: none;
 }
 
-/* 카테고리 */
-.inputCate{
-  width: 95%;
-  height: 100px;
-  border: 1px solid gray;
-}
-.inputLocate{
-  width: 95%;
-}
-
-.locateBox{
-  width: 95%;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid gray;
+/* 인원(최소/최대) 설명 박스 */
+/* 인원(최소/최대) 설명 박스 */
+.exNum {
+  background-color: #f2f2f2;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  
+  /* 자식 요소(.numHoverText)를 절대 위치로 배치하기 위해 relative 추가 */
+  position: relative;
 }
 
-.createBtn{
-  width: 100px;
-  height: 30px;
-  border-radius: 8px;
-  background-color: #0F4A7E;
-  color: white;
+/* hover 시 보일 텍스트 */
+.numHoverText {
+  display: none;
+  position: absolute;
+  
+  /* ★ 원하는 위치 위쪽에 배치 (예: .exNum의 윗부분보다 40px 정도 위에 표시) */
+  top: -40px; 
+  left: 50%;              /* 가로 기준 가운데 정렬 */
+  transform: translateX(-50%); /* 수평 방향 중앙 보정 */
+  
+  /* 툴팁 스타일 (배경, 여백 등) */
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  white-space: nowrap; /* 한 줄로 표시 (필요하다면) */
+  font-size: 0.85rem;
+  z-index: 999;        /* 다른 요소 위에 표시되도록 */
+}
+
+/* .exNum을 hover했을 때만 보이도록 처리 */
+.exNum:hover .numHoverText {
+  display: block;
+}
+
+
+/* 카테고리 라디오 버튼들 가로 배치 */
+.inputCate {
+  display: flex;
+  flex-wrap: wrap; /* 줄바꿈 허용 */
+  gap: 10px;       /* 라디오 버튼 간 간격 */
+}
+.cateBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+/* "생성하기" 버튼 */
+.createBtn {
+  background-color: #0054a6;
+  color: #fff;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.createBtn:hover {
+  background-color: #003d7a;
+}
+
+/* 모달 닫기 버튼 (오른쪽 상단) */
+.closeModalBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.closeModalBtn:hover {
+  color: #555;
 }

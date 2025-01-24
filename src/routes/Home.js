@@ -11,7 +11,7 @@ function Home() {
   const navigate = useNavigate();
 
   const signPageEnter = () => {
-    navigate('/signup');
+    navigate('/login');
   };
 
   return (
