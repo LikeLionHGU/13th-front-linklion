@@ -58,6 +58,7 @@ hr {
 }
 
 #signUp {
+  padding-top: 20px;
   padding-left: 30px;
 }
 
@@ -85,7 +86,7 @@ hr {
 }
 
 .signUpDiv {
-  padding-left: 30px;
+  padding-left: 37px;
   margin-top: 10px;
   font-size: 15px;
 }
@@ -94,6 +95,7 @@ hr {
   width: 330px;
   height: 38.32px;
   border-radius: 7.23px;
+  padding-top: 5px;
   border: solid 0.72px #929292;
   font-size: 15px;
 }
