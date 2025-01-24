@@ -34,8 +34,8 @@ const Login = () => {
       setLoginCheck(false);
       // Store token in local storage
       sessionStorage.setItem("message", result.message);
-      sessionStorage.setItem("memberId", result.memberId); // 여기서 userid를 저장합니다.
-      navigate("/"); // 로그인 성공시 홈으로 이동합니다.
+      sessionStorage.setItem("memberId", result.memberId); // 여기서 userid를 저장
+      navigate("/list"); // 로그인 성공시 list로 이동
     } else {
       setLoginCheck(true);
     }
