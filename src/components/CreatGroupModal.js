@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Modal from "react-modal";
-import "../src/App.css";
+import "../styles/Creatgroup.css";
 import axios from 'axios'; 
 
 const eventData = {
