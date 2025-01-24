@@ -78,7 +78,6 @@
 .nameBox,
 .imageBox,
 .dateBox,
-.TimeBox,
 .descripBox,
 .numBox,
 .selectBox,
@@ -89,6 +88,17 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+.TimeBox{
+  width: 50%;
+  padding: 8px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.inputTime .tilde {
+  margin: 0 5px;          
 }
 
 /* 소개글 textarea */
@@ -105,8 +115,6 @@
   margin-top: 5px;
   font-size: 0.9rem;
   border-radius: 4px;
-  
-  /* 자식 요소(.numHoverText)를 절대 위치로 배치하기 위해 relative 추가 */
   position: relative;
 }
 
@@ -114,11 +122,8 @@
 .numHoverText {
   display: none;
   position: absolute;
-  
-  /* ★ 원하는 위치 위쪽에 배치 (예: .exNum의 윗부분보다 40px 정도 위에 표시) */
   top: -40px; 
-  left: 50%;              /* 가로 기준 가운데 정렬 */
-  transform: translateX(-50%); /* 수평 방향 중앙 보정 */
+  left: 50%;               transform: translateX(-50%); 
   
   /* 툴팁 스타일 (배경, 여백 등) */
   background-color: #333;
@@ -176,3 +181,5 @@
 .closeModalBtn:hover {
   color: #555;
 }
+
+

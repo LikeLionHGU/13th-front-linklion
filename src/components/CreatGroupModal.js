@@ -16,11 +16,11 @@ function CreatGroupModal({ setIsModalOpen }) {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [maxNum, setMaxNum] = useState("");
-  const [memberID] = useState("679138f8227ea344dd490b8e");
+  const [maxNum, setMaxNum] = useState(""); 
+  const [memberID] = useState("679138f8227ea344dd490b8e"); 
 
-  const fileInputRef = useRef(null);
-  const [file, setFile] = useState(null);
+  const fileInputRef = useRef(null); 
+  const [file, setFile] = useState(null); 
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
@@ -28,7 +28,7 @@ function CreatGroupModal({ setIsModalOpen }) {
   const handleFileInputChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-      setFile(selectedFile);
+      setFile(selectedFile); 
     } else {
       alert("유효하지 않은 파일입니다.");
     }
@@ -50,7 +50,7 @@ function CreatGroupModal({ setIsModalOpen }) {
     formData.append("location", location);
     formData.append("description", description);
     formData.append("category", category);
-    formData.append("img", file);
+    formData.append("img", file); 
     formData.append("maxNum", maxNum);
     formData.append("memberID", memberID);
 
