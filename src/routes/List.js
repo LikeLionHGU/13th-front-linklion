@@ -9,6 +9,7 @@ import create_icon from "../assets/list/create_icon.svg";
 import Card from "../components/Card";
 import ApplyModal from "../components/ApplyModal";
 import "../styles/List.css";
+import CreatGroupModal from "../components/CreatGroupModal";
 
 function List() {
   const [cards, setCards] = useState([]);
@@ -16,9 +17,7 @@ function List() {
   const [memberId, setMemberId] = useState("");
 
   const getCards = async () => {
-    const response = await fetch(
-      `https://one3th-front-api.onrender.com/grouping/groupList`
-    );
+    const response = await fetch(`https://one3th-front-api.onrender.com/grouping/groupList`);
     const json = await response.json();
     setCards(json);
   };
@@ -37,6 +36,8 @@ function List() {
   }, []);
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [createModalOpen, setCreateModalOpen] = useState(false);
+
   const openApplyModal = (_id) => {
     setModalOpen(true);
     setGroupId(_id);
@@ -60,7 +61,7 @@ function List() {
         />
       </div> */}
       <div id="card-grid">
-        <div id="create-group-button">
+        <div id="create-group-button" onClick={() => setCreateModalOpen(true)}>
           <div id="create-icon-box">
             <img id="create-icon" src={create_icon} alt="create-icon" />
           </div>
@@ -83,13 +84,8 @@ function List() {
           </div>
         ))}
       </div>
-      {modalOpen && (
-        <ApplyModal
-          setModalOpen={setModalOpen}
-          groupId={groupId}
-          memberId={memberId}
-        />
-      )}
+      {modalOpen && <ApplyModal setModalOpen={setModalOpen} groupId={groupId} memberId={memberId} />}
+      {createModalOpen && <CreatGroupModal createModalOpen={createModalOpen} setCreateModalOpen={setCreateModalOpen} />}
       {/* <div id="list-next-arrow-box">
         <img id="list-next-arrow" src={next_arrow} alt="next-arrow" />
       </div> */}

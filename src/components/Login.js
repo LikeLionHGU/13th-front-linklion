@@ -15,26 +15,22 @@ const Login = () => {
     event.preventDefault();
     await new Promise((r) => setTimeout(r, 1000));
 
-    const response = await fetch(
-      "https://one3th-front-api.onrender.com/grouping/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: name,
-          password: password,
-        }),
-      }
-    );
+    const response = await fetch("https://one3th-front-api.onrender.com/grouping/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        password: password,
+      }),
+    });
     const result = await response.json();
 
     if (response.status === 200) {
       setLoginCheck(false);
       // Store token in local storage
-      sessionStorage.setItem("message", result.message);
-      sessionStorage.setItem("memberId", result.memberId); // 여기서 userid를 저장
+      window.localStorage.setItem("memberID", result.memberID);
       navigate("/list"); // 로그인 성공시 list로 이동
     } else {
       setLoginCheck(true);
@@ -57,40 +53,22 @@ const Login = () => {
                 <label className="username" htmlFor="username">
                   이름
                 </label>
-                <input
-                  type="text"
-                  id="username"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
+                <input type="text" id="username" value={name} onChange={(e) => setName(e.target.value)} />
               </div>
 
               <div className="login-component">
                 <label className="password" htmlFor="password">
                   비밀번호
                 </label>
-                <input
-                  type="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                {loginCheck && (
-                  <label style={{ color: "red" }}>
-                    이름 혹은 비밀번호가 틀렸습니다.
-                  </label>
-                )}
+                <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                {loginCheck && <label style={{ color: "red" }}>이름 혹은 비밀번호가 틀렸습니다.</label>}
               </div>
               <button className="loginBtn" onClick={handleLogin}>
                 로그인
               </button>
 
               <p className="signup-link">
-                <Link
-                  to="/signup"
-                  id="linkToSignUp"
-                  style={{ textDecoration: "none" }}
-                >
+                <Link to="/signup" id="linkToSignUp" style={{ textDecoration: "none" }}>
                   회원가입
                 </Link>
               </p>

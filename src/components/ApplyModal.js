@@ -9,18 +9,17 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   const [group, setGroup] = useState([]);
   const [applyMembers, setApplyMembers] = useState([]);
   const [hasJoined, setHasJoined] = useState(false);
+  const [memberID, setMemberID] = useState("");
 
   const getGroup = async () => {
-    const response = await fetch(
-      `https://one3th-front-api.onrender.com/grouping/groupList/${groupId}`
-    );
+    const response = await fetch(`https://one3th-front-api.onrender.com/grouping/groupList/${groupId}`);
     const json = await response.json();
     setGroup(json);
   };
 
-  const getApplyMembers = async () => {
+  const getApplyMembers = async (userID) => {
     const response2 = await fetch(
-      `https://one3th-front-api.onrender.com/grouping/groupParticipants/${groupId}?memberID=67927c4945f95231710d4db7`
+      `https://one3th-front-api.onrender.com/grouping/groupParticipants/${groupId}?memberID=${userID}`
     );
     const json2 = await response2.json();
     console.log(json2);
@@ -29,15 +28,13 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   };
 
   const joinGroup = async () => {
-    const memID = { memberID: "67927c4945f95231710d4db7" };
-    const sendRequest = await fetch(
-      `https://one3th-front-api.onrender.com/grouping/joinGroup/${groupId}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(memID),
-      }
-    )
+    const memID = { memberID: memberID };
+    console.log(memID);
+    const sendRequest = await fetch(`https://one3th-front-api.onrender.com/grouping/joinGroup/${groupId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(memID),
+    })
       .then()
       .catch((error) => console.error(error));
     alert("신청하였습니다!");
@@ -45,8 +42,12 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
   };
 
   useEffect(() => {
+    const userID = window.localStorage.getItem("memberID");
+    setMemberID(userID);
+    console.log("userID " + userID);
+    console.log("groupID " + groupId);
     getGroup();
-    getApplyMembers();
+    getApplyMembers(userID);
   }, []);
 
   return (
@@ -89,9 +90,7 @@ function ApplyModal({ setModalOpen, groupId, memberId }) {
               </div>
               <div id="detail-description">
                 <span className="detail-content-key">설명</span>
-                <span className="detail-content-value">
-                  {group.description}
-                </span>
+                <span className="detail-content-value">{group.description}</span>
               </div>
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 import { useState, useRef } from "react";
 import Modal from "react-modal";
 import "../styles/Creatgroup.css";
@@ -6,7 +5,7 @@ import axios from "axios";
 
 const apiUrl = "https://one3th-front-api.onrender.com/grouping/addGroup";
 
-function CreatGroupModal({ setIsModalOpen }) {
+function CreatGroupModal({ createModalOpen, setCreateModalOpen }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const [groupName, setGroupName] = useState("");
@@ -16,19 +15,16 @@ function CreatGroupModal({ setIsModalOpen }) {
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const [maxNum, setMaxNum] = useState(""); 
-  const [memberID] = useState("679138f8227ea344dd490b8e"); 
+  const [maxNum, setMaxNum] = useState("");
+  const memberID = window.localStorage.getItem("memberID");
 
-  const fileInputRef = useRef(null); 
-  const [file, setFile] = useState(null); 
-
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  const fileInputRef = useRef(null);
+  const [file, setFile] = useState(null);
 
   const handleFileInputChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
-      setFile(selectedFile); 
+      setFile(selectedFile);
     } else {
       alert("유효하지 않은 파일입니다.");
     }
@@ -50,7 +46,7 @@ function CreatGroupModal({ setIsModalOpen }) {
     formData.append("location", location);
     formData.append("description", description);
     formData.append("category", category);
-    formData.append("img", file); 
+    formData.append("img", file);
     formData.append("maxNum", maxNum);
     formData.append("memberID", memberID);
 
@@ -65,7 +61,8 @@ function CreatGroupModal({ setIsModalOpen }) {
       .then((response) => {
         console.log("소그룹이 성공적으로 등록되었습니다!", response.data);
         alert("소그룹이 성공적으로 등록되었습니다!");
-        closeModal();
+        setCreateModalOpen(false);
+        window.location.reload();
       })
       .catch((error) => {
         console.error("소그룹 등록 중 오류가 발생했습니다.", error);
@@ -83,11 +80,7 @@ function CreatGroupModal({ setIsModalOpen }) {
 
   return (
     <div className="Back">
-      <button onClick={openModal} className="openBtn">
-        소모임 생성
-      </button>
-
-      <Modal className="FormContainer" isOpen={isOpen} onRequestClose={closeModal}>
+      <Modal className="FormContainer" isOpen={createModalOpen} onRequestClose={() => setCreateModalOpen(false)}>
         <h2>소모임 생성하기</h2>
 
         <form className="inputForm" onSubmit={handleSubmit}>
@@ -120,30 +113,15 @@ function CreatGroupModal({ setIsModalOpen }) {
             {/* 날짜 */}
             <div className="inputDate">
               <label>날짜</label>
-              <input
-                className="dateBox"
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-              />
+              <input className="dateBox" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
             </div>
 
             {/* 시간 */}
             <div className="inputTime">
               <label>시간</label>
-              <input
-                className="TimeBox"
-                type="time"
-                value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
-              />
+              <input className="TimeBox" type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
               ~
-              <input
-                className="TimeBox"
-                type="time"
-                value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
-              />
+              <input className="TimeBox" type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
             </div>
           </div>
 
@@ -169,11 +147,7 @@ function CreatGroupModal({ setIsModalOpen }) {
                 </div>
               </div>
 
-              <select
-                className="selectBox"
-                value={maxNum}
-                onChange={(e) => setMaxNum(e.target.value)}
-              >
+              <select className="selectBox" value={maxNum} onChange={(e) => setMaxNum(e.target.value)}>
                 <option value="">선택</option>
                 <option value="3명">3명</option>
                 <option value="4명">4명</option>
@@ -212,11 +186,15 @@ function CreatGroupModal({ setIsModalOpen }) {
               />
             </div>
 
-            <button className="createBtn" type="submit">생성하기</button>
+            <button className="createBtn" type="submit">
+              생성하기
+            </button>
           </div>
         </form>
 
-        <button className="closeModalBtn" onClick={closeModal}>닫기</button>
+        <button className="closeModalBtn" onClick={() => setCreateModalOpen(false)}>
+          닫기
+        </button>
       </Modal>
     </div>
   );
